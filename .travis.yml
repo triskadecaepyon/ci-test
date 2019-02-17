@@ -1,4 +1,11 @@
 language: c
+sudo: required
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq -y cpio python3 python3-pip
+  - sudo pip3 install http://rscohn2.github.io/files/isrm.zip
+  - sudo isrm pkg install --activate-serial-number icc
 
 script:
   - mkdir build; cd build
