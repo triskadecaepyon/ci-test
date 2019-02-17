@@ -11,6 +11,6 @@ script:
   - source /opt/intel/bin/iccvars.sh -arch intel64
   - icc -v
   - mkdir build; cd build
-  - cmake ../src
+  - FC=ifort CC=icc CXX=icpc cmake ../src
   - make
   - make test
