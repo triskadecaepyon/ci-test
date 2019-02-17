@@ -1,5 +1,7 @@
+language: c
+
 script:
-  cd build
-  cmake ../src
-  make
-  make test
+  - cd build
+  - cmake ../src
+  - make
+  - make test

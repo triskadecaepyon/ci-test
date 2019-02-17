@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/rscohn2/ci-test.svg?branch=master)](https://travis-ci.com/rscohn2/ci-test)
+  
+
 # ci-test
 
 Test for CI systems. Uses icc and ifc
