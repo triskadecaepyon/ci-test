@@ -8,6 +8,8 @@ before_install:
   - sudo isrm pkg install --activate-serial-number icc
 
 script:
+  - source /opt/intel/bin/iccvars.sh -arch intel64
+  - icc -v
   - mkdir build; cd build
   - cmake ../src
   - make
