@@ -2,8 +2,8 @@ image: ubuntu
 
 before_script:
     - apt-get update -qq && apt-get install -y -qq cmake cpio python3 python3-pip
-    - pip3 install http://rscohn2.github.io/files/isrm.zip
-    - isrm pkg install --activate-serial-number icc
+    - pip3 install http://rscohn2.github.io/files/isrm-master.zip
+    - isrm pkg install --activate-serial-number icc ifort
 
 test:
   script:
