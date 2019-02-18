@@ -5,3 +5,4 @@ project (ci-test)
 
 enable_testing()
 add_subdirectory (c-example)
+add_subdirectory (fortran-example)

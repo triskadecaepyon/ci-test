@@ -1,4 +1,4 @@
 include(CTest)
 
-add_executable (hello hello.c)
-add_test (c-test hello)
+add_executable (c-hello hello.c)
+add_test (c-test c-hello)
