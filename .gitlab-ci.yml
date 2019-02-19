@@ -9,7 +9,7 @@ test:
   script:
     - set -x
     # Force 0 exit code with null command. Not sure why script fails
-    - source /opt/intel/bin/iccvars.sh -arch intel64 || :
+    - source /opt/intel/bin/iccvars.sh -arch intel64 || true
     - icc -v
     - mkdir build; cd build
     - FC=ifort CC=icc CXX=icpc cmake ../src
