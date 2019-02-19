@@ -1,4 +1,5 @@
 
+Appveyor: [![Build status](https://ci.appveyor.com/api/projects/status/6oohk2yxkn1aildx?svg=true)](https://ci.appveyor.com/project/rscohn2/ci-test)
 
 CircleCI: [![CircleCI](https://circleci.com/gh/rscohn2/ci-test.svg?style=svg)](https://circleci.com/gh/rscohn2/ci-test)
 
@@ -8,7 +9,7 @@ TravisCI: [![Build Status](https://travis-ci.com/rscohn2/ci-test.svg?branch=mast
 	
 # ci-test
 
-Test for CI systems. Uses icc and ifc
+Test for CI systems. Uses icc and ifort
 
 # Requirements
 
