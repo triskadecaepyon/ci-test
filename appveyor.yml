@@ -4,10 +4,10 @@ install:
   - sudo apt-get update -qq
   - sudo apt-get install -y -qq cmake cpio python3 python3-pip
   - pip3 install http://rscohn2.github.io/files/isrm-master.zip
-  - isrm pkg install --activate-serial-number icc ifort
+  - isrm pkg install --install-dir ~/opt/intel --activate-serial-number icc ifort
 
 test_script:
-  - source /opt/intel/bin/iccvars.sh -arch intel64
+  - source ~/opt/intel/bin/iccvars.sh -arch intel64
   - icc -v
   - mkdir build; cd build
   - FC=ifort CC=icc CXX=icpc cmake ../src
