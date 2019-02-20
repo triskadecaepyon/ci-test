@@ -17,10 +17,11 @@ steps:
 - script: sudo pip3 install http://rscohn2.github.io/files/isrm-master.zip
   displayName: 'install isrm'
 
-- script: if [ ! -z ${ACTIVATION_SERIAL_NUMBER} ]; then echo "Serial provided";  fi;
-  displayName: 'check for serial'
+- task: Get License
+  inputs:
+    secureFile: psxe.lic
 
-- script: sudo isrm pkg install --activate-serial-number icc ifort
+- script: sudo isrm pkg install icc ifort
   displayName: 'Activate license'
 
 - script: |
