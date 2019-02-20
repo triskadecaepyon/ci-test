@@ -23,6 +23,7 @@ steps:
 
 - script: |
     cp $(Agent.TempDirectory)/psxe.lic .
+    ls -la
     sudo isrm pkg install icc ifort
   displayName: 'Activate license'
 
