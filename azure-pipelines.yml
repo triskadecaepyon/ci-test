@@ -17,7 +17,7 @@ steps:
 - script: sudo pip3 install http://rscohn2.github.io/files/isrm-master.zip
   displayName: 'install isrm'
 
-- task: GetLicense@1
+- task: DownloadSecureFile@1
   inputs:
     secureFile: psxe.lic
 
