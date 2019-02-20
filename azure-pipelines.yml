@@ -1,4 +1,5 @@
 # Test Pipeline for Azure Pipelines
+# Template for Linux
 
 trigger:
 - master
