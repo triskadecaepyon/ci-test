@@ -1,16 +1,28 @@
 image: ubuntu
 
-before_script:
+job:
+  before_script:
     - apt-get update -qq && apt-get install -y -qq cmake cpio python3 python3-pip
-    - pip3 install http://rscohn2.github.io/files/isrm-master.zip
-    - isrm pkg install --activate-serial-number icc ifort
-
-test:
   script:
     # Force 0 exit code with null command. Not sure why script fails
-    - source /opt/intel/bin/iccvars.sh -arch intel64 || true
+    - pip3 install http://rscohn2.github.io/files/isrm-master.zip
+    - isrm pkg install --activate-serial-number icc ifort
     - icc -v
     - mkdir build; cd build
     - FC=ifort CC=icc CXX=icpc cmake ../src
     - make
+  after_script:
     - make test
+  only:
+    - merge_requests
+
+job:
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq cmake cpio g++ gfortran
+  script:
+    - mkdir build; cd build
+    - FC=gfortran CC=gcc CXX=g++ cmake ../src
+    - make
+  after_script:
+    - make test
+
