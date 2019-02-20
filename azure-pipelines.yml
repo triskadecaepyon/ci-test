@@ -21,7 +21,9 @@ steps:
   inputs:
     secureFile: psxe.lic
 
-- script: sudo isrm pkg install icc ifort
+- script: |
+    cp $(Agent.TempDirectory)/psxe.lic
+    sudo isrm pkg install icc ifort
   displayName: 'Activate license'
 
 - script: |
