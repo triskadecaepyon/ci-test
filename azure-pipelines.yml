@@ -29,18 +29,12 @@ steps:
 #  displayName: 'Activate license'
 
 # This method is for a environment variable method
-- task: PowerShell@2
-  displayName: 'PowerShell Script'
-  inputs:
-    targetType: ./
-    filePath: setEnvVar.ps1
-  env:
-    ACTIVATION_SERIAL_NUMBER: $(ACTIVATION_SERIAL_NUMBER)
-
 - script: |
      printenv
      isrm pkg install --activate-serial-number icc ifort
   displayName: 'Activate license'
+  env:
+    ACTIVATION_SERIAL_NUMBER: $(activation.serial.number)
 
 - script: |
      source /opt/intel/bin/iccvars.sh -arch intel64 &&
