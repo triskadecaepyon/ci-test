@@ -29,8 +29,8 @@ steps:
 #  displayName: 'Activate license'
 
 # This method is for a environment variable method
-- powershell: ./ setEnvVar.ps1
-  arguments: '$env:ACTIVATION_SERIAL_NUMBER'
+- powershell: ./ setEnvVar.ps1 $env:ACTIVATION_SERIAL_NUMBER
+  displayName: 'PowerShell Script'
 
 - script: isrm pkg install --activate-serial-number icc ifort
   displayName: 'Activate license'
