@@ -29,7 +29,7 @@ steps:
 #  displayName: 'Activate license'
 
 # This method is for a environment variable method
-- script: isrm pkg  --activate-serial-number --install-dir ~/opt/intel icc ifort
+- script: isrm pkg install --activate-serial-number --install-dir ~/opt/intel icc ifort
   displayName: 'Activate license'
   env:
     ACTIVATION_SERIAL_NUMBER: $(activation.serial.number)
