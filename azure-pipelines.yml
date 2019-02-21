@@ -17,13 +17,23 @@ steps:
 - script: sudo pip3 install http://rscohn2.github.io/files/isrm-master.zip
   displayName: 'install isrm'
 
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: psxe.lic
+# This method is for a secure license file
+#
+#- task: DownloadSecureFile@1
+#  inputs:
+#    secureFile: psxe.lic
+#
+#- script: |
+#    cp $(Agent.TempDirectory)/psxe.lic ~/intel/license/
+#    sudo isrm pkg install icc ifort
+#  displayName: 'Activate license'
 
-- script: |
-    cp $(Agent.TempDirectory)/psxe.lic ~/opt/intel/license/
-    sudo isrm pkg install icc ifort
+# This method is for a environment variable method
+- powershell:
+  env:
+    ACTIVATION_SERIAL_NUMBER: $(ACTIVATION_SERIAL_NUMBER)
+
+- script: isrm pkg install --activate-serial-number icc ifort
   displayName: 'Activate license'
 
 - script: |
