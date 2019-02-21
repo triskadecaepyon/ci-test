@@ -29,8 +29,13 @@ steps:
 #  displayName: 'Activate license'
 
 # This method is for a environment variable method
-- powershell: ./setEnvVar.ps1 $env:ACTIVATION_SERIAL_NUMBER
+- task: PowerShell@2
   displayName: 'PowerShell Script'
+  inputs:
+    targetType: ./
+    filePath: setEnvVar.ps1
+  env:
+    ACTIVATION_SERIAL_NUMBER: $(ACTIVATION_SERIAL_NUMBER)
 
 - script: |
      printenv
