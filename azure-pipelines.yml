@@ -35,7 +35,7 @@ steps:
     ACTIVATION_SERIAL_NUMBER: $(activation.serial.number)
 
 - script: |
-     source /opt/intel/bin/iccvars.sh -arch intel64 &&
+     source ~/opt/intel/bin/iccvars.sh -arch intel64 &&
      icc -v &&
      mkdir build; cd build &&
      FC=ifort CC=icc CXX=icpc cmake ../src &&
